@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos acessíveis Globais */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px; /* Fonte ampliada para leitura confortável */
+  line-height: 1.6;
+  background-color: #f4f6f9;
+  color: #1a1a1a; /* Alto contraste */
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #004085;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.3rem;
+}
+
+/* Conteúdo Principal */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Cards de Dicas */
+.dica-card {
+  background-color: #ffffff;
+  border: 3px solid #004085; /* Borda bem visível */
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dica-card h2 {
+  color: #004085;
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.dica-card p {
+  margin-bottom: 15px;
+}
+
+/* Destaques e Alertas */
+.alerta {
+  background-color: #fff3cd;
+  border-left: 6px solid #856404;
+  padding: 15px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #856404;
+  border-radius: 4px;
+}
+
+/* Botão de Emergência / Contato */
+.contato-box {
+  background-color: #d4edda;
+  border: 3px solid #155724;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contato-box h2 {
+  color: #155724;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.btn-ajuda {
+  display: inline-block;
+  background-color: #155724;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 18px 30px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border: none;
+}
+
+.btn-ajuda:hover, .btn-ajuda:focus {
+  background-color: #0b2e13;
+  outline: 4px solid #ffbf00; /* Indicador visual claro de foco */
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #555555;
+}
