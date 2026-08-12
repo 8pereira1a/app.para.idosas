@@ -1,32 +1,63 @@
-/* Reset básico */
+/* Reset Básico */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Estilos acessíveis Globais */
+/* Estilos Globais Acessíveis */
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px; /* Fonte ampliada para leitura confortável */
   line-height: 1.6;
   background-color: #f4f6f9;
-  color: #1a1a1a; /* Alto contraste */
-  padding: 20px;
+  color: #1a1a1a;
+  padding-bottom: 60px;
 }
 
-/* Cabeçalho */
+/* Barra Superior de Emergência */
+.top-bar {
+  background-color: #fff0f0;
+  border-bottom: 4px solid #dc3545;
+  padding: 15px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Vermelho de Ajuda Instantânea */
+.btn-emergencia {
+  background-color: #d32f2f;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 18px 30px;
+  border: 3px solid #b71c1c;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-emergencia:hover,
+.btn-emergencia:focus {
+  background-color: #b71c1c;
+  outline: 4px solid #ffbf00; /* Destaque visual forte para foco */
+  transform: scale(1.02);
+}
+
+/* Cabeçalho Principal */
 header {
   background-color: #004085;
   color: #ffffff;
-  padding: 30px 20px;
+  padding: 35px 20px;
   text-align: center;
-  border-radius: 12px;
-  margin-bottom: 30px;
 }
 
 header h1 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   margin-bottom: 10px;
 }
 
@@ -34,84 +65,119 @@ header p {
   font-size: 1.3rem;
 }
 
-/* Conteúdo Principal */
+/* Layout do Conteúdo Principal */
 main {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
-/* Cards de Dicas */
+/* Seções e Cards de Dicas */
+.secao-titulo {
+  color: #004085;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #004085;
+  padding-bottom: 8px;
+}
+
 .dica-card {
   background-color: #ffffff;
-  border: 3px solid #004085; /* Borda bem visível */
+  border: 3px solid #004085;
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-.dica-card h2 {
+.dica-card h3 {
   color: #004085;
-  font-size: 1.7rem;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
 }
 
-.dica-card p {
-  margin-bottom: 15px;
-}
-
-/* Destaques e Alertas */
-.alerta {
+.alerta-box {
   background-color: #fff3cd;
-  border-left: 6px solid #856404;
+  border-left: 8px solid #856404;
   padding: 15px;
   margin-top: 15px;
   font-weight: bold;
   color: #856404;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-/* Botão de Emergência / Contato */
-.contato-box {
-  background-color: #d4edda;
-  border: 3px solid #155724;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  margin-top: 40px;
+/* JANELINHA / MODAL DE AJUDA (CSS PURO USANDO :target) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none; /* Escondido por padrão */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
 }
 
-.contato-box h2 {
-  color: #155724;
-  font-size: 1.8rem;
+/* Exibe a janelinha quando o link do botão aciona o ID */
+.modal-overlay:target {
+  display: flex;
+}
+
+.modal-conteudo {
+  background-color: #ffffff;
+  border: 5px solid #d32f2f;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-conteudo h2 {
+  color: #d32f2f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.lista-passos {
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+.lista-passos li {
   margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
-.btn-ajuda {
+.btn-fechar {
   display: inline-block;
-  background-color: #155724;
+  background-color: #004085;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration: none;
-  padding: 18px 30px;
+  padding: 15px 30px;
   border-radius: 8px;
-  margin-top: 15px;
-  border: none;
+  text-align: center;
 }
 
-.btn-ajuda:hover, .btn-ajuda:focus {
-  background-color: #0b2e13;
-  outline: 4px solid #ffbf00; /* Indicador visual claro de foco */
+.btn-fechar:hover,
+.btn-fechar:focus {
+  background-color: #002752;
+  outline: 4px solid #ffbf00;
 }
 
 /* Rodapé */
 footer {
   text-align: center;
+  padding: 25px;
+  background-color: #e9ecef;
+  color: #495057;
   margin-top: 40px;
-  padding: 20px;
   font-size: 1.1rem;
-  color: #555555;
 }
